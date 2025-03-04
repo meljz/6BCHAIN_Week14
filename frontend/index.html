@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Consumption Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>APN ELECTRIC CORPORATION</h2>
+
+        <label>Previous Energy Consumption (kWh):</label>
+        <input type="number" id="prevUsage">
+
+        <label>Present Energy Consumption (kWh):</label>
+        <input type="number" id="presUsage">
+
+        <label>Consumer Region:</label>
+        <select id="region">
+            <option value="NCR">NCR</option>
+            <option value="Luzon">Luzon</option>
+            <option value="Visayas">Visayas</option>
+            <option value="Mindanao">Mindanao</option>
+            <option value="Other regions">Other regions</option>
+        </select>
+
+        <label>Consumer Classification:</label>
+        <select id="classification">
+            <option value="residential">Residential</option>
+            <option value="lowCommercial">Low Voltage Commercial</option>
+            <option value="lowIndustrial">Low Voltage Industrial</option>
+            <option value="highCommercial">High Voltage Commercial</option>
+            <option value="highIndustrial">High Voltage Industrial</option>
+        </select>
+
+        <button id="compute">Compute</button>
+
+        <h3>Results:</h3>
+        <p>Total Energy Consumption (kWh): <span id="totalConsumption"></span></p>
+        <p>Consumption Energy Bill: <span id="consumptionBill"></span></p>
+
+        <h3>Breakdown of Bill Payment:</h3>
+        <p>Generation Charge: <span id="generationCharge"></span></p>
+        <p>Transmission Charge: <span id="transmissionCharge"></span></p>
+        <p>Distribution Charge: <span id="distributionCharge"></span></p>
+        <p>Taxes: <span id="taxes"></span></p>
+        <p>Other Taxes: <span id="otherTaxes"></span></p>
+
+        <button onclick="window.print()">Take Screenshot</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
