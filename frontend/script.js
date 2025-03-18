@@ -1,4 +1,7 @@
 document.getElementById("compute").addEventListener("click", async function () {
+    let accountNumber = document.getElementById("accountNumber").value;
+    let accountName = document.getElementById("accountName").value;
+    let address = document.getElementById("address").value;
     let prevUsage = parseFloat(document.getElementById("prevUsage").value);
     let presUsage = parseFloat(document.getElementById("presUsage").value);
     let region = document.getElementById("region").value;
@@ -6,6 +9,11 @@ document.getElementById("compute").addEventListener("click", async function () {
 
     if (isNaN(prevUsage) || isNaN(presUsage) || prevUsage > presUsage) {
         alert("Invalid input! Ensure numerical values and Present Usage is greater.");
+        return;
+    }
+
+    if (!accountNumber || !accountName || !address) {
+        alert("Please fill in all fields.");
         return;
     }
 
@@ -17,6 +25,7 @@ document.getElementById("compute").addEventListener("click", async function () {
 
     let data = await response.json();
 
+    // Display results dynamically
     document.getElementById("totalConsumption").textContent = data.totalConsumption + " kWh";
     document.getElementById("consumptionBill").textContent = "₱" + data.consumptionBill;
     document.getElementById("generationCharge").textContent = "₱" + data.generationCharge;

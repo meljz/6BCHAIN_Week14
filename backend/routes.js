@@ -9,6 +9,12 @@ const rates = {
     "Other regions": { residential: 9.77, lowCommercial: 10.08, lowIndustrial: 8.93, highCommercial: 8.08, highIndustrial: 9.01 }
 };
 
+
+router.get("/", (req, res) => {
+  res.send("Welcome to the consumption bill calculator!");
+});
+
+
 router.post("/calculate", (req, res) => {
     const { prevUsage, presUsage, region, classification } = req.body;
 
@@ -16,9 +22,11 @@ router.post("/calculate", (req, res) => {
         return res.status(400).json({ error: "Invalid input" });
     }
 
+
     let totalConsumption = presUsage - prevUsage;
     let rate = rates[region][classification];
     let consumptionBill = totalConsumption * rate;
+
 
     let breakdown = {
         totalConsumption: totalConsumption.toFixed(2),

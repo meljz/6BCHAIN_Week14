@@ -8,47 +8,86 @@
 </head>
 <body>
 
-    <div class="container">
-        <h2>APN ELECTRIC CORPORATION</h2>
+    <div class="main-container">
+        <div class="form-container">
+            <h1>APN Energy Calculator</h1>
 
-        <label>Previous Energy Consumption (kWh):</label>
-        <input type="number" id="prevUsage">
+            <div class="input-group">
+                <label for="accountNumber">Account Number:</label>
+                <input type="text" id="accountNumber" placeholder="Enter Account Number" required>
+            </div>
 
-        <label>Present Energy Consumption (kWh):</label>
-        <input type="number" id="presUsage">
+            <div class="input-group">
+                <label for="accountName">Account Name:</label>
+                <input type="text" id="accountName" placeholder="Enter Last name, First name, Middle name" required>
+            </div>
 
-        <label>Consumer Region:</label>
-        <select id="region">
-            <option value="NCR">NCR</option>
-            <option value="Luzon">Luzon</option>
-            <option value="Visayas">Visayas</option>
-            <option value="Mindanao">Mindanao</option>
-            <option value="Other regions">Other regions</option>
-        </select>
+            <div class="input-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" placeholder="Enter Address" required>
+            </div>
 
-        <label>Consumer Classification:</label>
-        <select id="classification">
-            <option value="residential">Residential</option>
-            <option value="lowCommercial">Low Voltage Commercial</option>
-            <option value="lowIndustrial">Low Voltage Industrial</option>
-            <option value="highCommercial">High Voltage Commercial</option>
-            <option value="highIndustrial">High Voltage Industrial</option>
-        </select>
+            <div class="input-group">
+                <label for="region">Consumer Region:</label>
+                <select id="region">
+                    <option value="NCR">NCR</option>
+                    <option value="Luzon">Luzon</option>
+                    <option value="Visayas">Visayas</option>
+                    <option value="Mindanao">Mindanao</option>
+                    <option value="Other regions">Other regions</option>
+                </select>
+            </div>
 
-        <button id="compute">Compute</button>
+            <div class="input-group">
+                <label for="prevUsage">Previous Consumption (kWh):</label>
+                <input type="number" id="prevUsage" placeholder="Enter previous usage" required>
+            </div>
 
-        <h3>Results:</h3>
-        <p>Total Energy Consumption (kWh): <span id="totalConsumption"></span></p>
-        <p>Consumption Energy Bill: <span id="consumptionBill"></span></p>
+            <div class="input-group">
+                <label for="presUsage">Present Consumption (kWh):</label>
+                <input type="number" id="presUsage" placeholder="Enter present usage" required>
+            </div>
 
-        <h3>Breakdown of Bill Payment:</h3>
-        <p>Generation Charge: <span id="generationCharge"></span></p>
-        <p>Transmission Charge: <span id="transmissionCharge"></span></p>
-        <p>Distribution Charge: <span id="distributionCharge"></span></p>
-        <p>Taxes: <span id="taxes"></span></p>
-        <p>Other Taxes: <span id="otherTaxes"></span></p>
+            <div class="input-group">
+                <label for="classification">Classification:</label>
+                <select id="classification">
+                    <option value="residential">Residential</option>
+                    <option value="lowCommercial">Low Voltage Commercial</option>
+                    <option value="lowIndustrial">Low Voltage Industrial</option>
+                    <option value="highCommercial">High Voltage Commercial</option>
+                    <option value="highIndustrial">High Voltage Industrial</option>
+                </select>
+            </div>
 
-        <button onclick="window.print()">Take Screenshot</button>
+            <button id="compute">Compute</button>
+        </div>
+
+        <div class="result-container">
+            <h3>Results</h3>
+            <div class="result-item">
+                <span>Total Consumption: </span><span id="totalConsumption"></span>
+            </div>
+            <div class="result-item">
+                <span>Bill: </span><span id="consumptionBill"></span>
+            </div>
+            <div class="result-item">
+                <span>Generation Charge: </span><span id="generationCharge"></span>
+            </div>
+            <div class="result-item">
+                <span>Transmission Charge: </span><span id="transmissionCharge"></span>
+            </div>
+            <div class="result-item">
+                <span>Distribution Charge: </span><span id="distributionCharge"></span>
+            </div>
+            <div class="result-item">
+                <span>Taxes: </span><span id="taxes"></span>
+            </div>
+            <div class="result-item">
+                <span>Other Taxes: </span><span id="otherTaxes"></span>
+            </div>
+        </div>
+
+        <button class="print-btn" onclick="window.print()">Print Results</button>
     </div>
 
     <script src="script.js"></script>

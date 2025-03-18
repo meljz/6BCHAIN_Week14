@@ -1,53 +1,115 @@
-/* Apply gradient background */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #2c3e50, #4ca1af);
-    color: white;
-    text-align: center;
-    padding: 20px;
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ff7f32;  /* Orange background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Style container */
-.container {
-    max-width: 600px;
-    margin: auto;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #fff;
+    padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
 }
 
-/* Input fields */
+/* Form Styles */
+.form-container {
+    width: 40%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
 input, select {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
-    border: none;
     border-radius: 5px;
+    border: 1px solid #ddd;
     font-size: 16px;
+    margin-top: 5px;
 }
 
-/* Button styling */
+/* Compute Button */
 button {
-    background: #ff8c00;
+    background-color: #ff6a00;
     color: white;
-    border: none;
-    padding: 10px 15px;
+    padding: 12px;
     font-size: 18px;
     cursor: pointer;
     border-radius: 5px;
-    transition: 0.3s;
+    border: none;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background: #ff6a00;
+    background-color: #e65c00;
 }
 
-/* Results */
+/* Results Styles */
+.result-container {
+    width: 55%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 h3 {
-    margin-top: 20px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
 }
 
-p {
-    font-size: 18px;
+.result-item {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.result-item span {
+    font-weight: bold;
+}
+
+/* Print Button */
+.print-btn {
+    background-color: #0066cc;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    margin-top: 20px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.print-btn:hover {
+    background-color: #005bb5;
 }
